@@ -14,12 +14,8 @@ const todoList =
 renderHTML()
 function renderHTML() {
   let todoListHTML = '';
-  todoList.forEach(function(totalObject , index  ) {
-  // const totalObject = todoList[i]; 
+  todoList.forEach(function(totalObject , index  ) { 
   const {name , dueDate , time} = totalObject
-  // const name = totalObject.name
-  // const dueDate = totalObject.dueDate
-  // const time = totalObject.time
     
   const html = `
   <p>
