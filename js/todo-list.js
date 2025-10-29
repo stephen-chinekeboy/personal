@@ -1,0 +1,69 @@
+const todoList = 
+[{name:'Pray',
+  dueDate: '2025-10-29',
+  time: '12:00AM'},{
+  name: 'Sturdy The Word',
+  dueDate: '2025-10-29',
+  time: '12:00AM',
+},{
+  name: 'Fast',
+  dueDate: '2025-10-29',
+  time: '12:00AM',
+}];
+renderHTML()
+function renderHTML() {
+  let todoListHTML = '';
+  for (let i = 0; i < todoList.length; i++) {
+  const totalObject = todoList[i]; 
+  const {name , dueDate , time} = totalObject
+  // const name = totalObject.name
+  // const dueDate = totalObject.dueDate
+  // const time = totalObject.time
+    
+  const html = `
+  <p>
+  ${name} ${dueDate} ${time}
+  <button onclick="
+    todoList.splice(${i} , 1);
+    renderHTML()
+  ">Delete</button>
+  </p>`
+  todoListHTML += html
+}
+  document.querySelector('.js-todo-html')
+  .innerHTML = todoListHTML;
+  console.log(todoListHTML);
+}
+
+
+
+
+function addTodo() {
+  const inputElement = document.querySelector('.js-todo-add');
+  const name = inputElement.value;
+
+  const dateInputElement = document.querySelector('.js-todo-date');
+  const dueDate = dateInputElement.value;
+
+  const timeInputElement = document.querySelector('.js-todo-time');
+  const time = timeInputElement.value
+
+  todoList.push({
+    name:name,
+    dueDate,
+    time
+  });
+
+  inputElement.value = '';
+  console.log(todoList);
+
+  renderHTML()
+
+};
+
+
+
+  
+
+
+
