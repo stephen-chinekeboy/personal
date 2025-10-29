@@ -1,7 +1,8 @@
 const todoList = 
 [{name:'Pray',
   dueDate: '2025-10-29',
-  time: '12:00AM'},{
+  time: '12:00AM'}
+  ,{
   name: 'Sturdy The Word',
   dueDate: '2025-10-29',
   time: '12:00AM',
@@ -13,8 +14,8 @@ const todoList =
 renderHTML()
 function renderHTML() {
   let todoListHTML = '';
-  for (let i = 0; i < todoList.length; i++) {
-  const totalObject = todoList[i]; 
+  todoList.forEach(function(totalObject , index  ) {
+  // const totalObject = todoList[i]; 
   const {name , dueDate , time} = totalObject
   // const name = totalObject.name
   // const dueDate = totalObject.dueDate
@@ -24,12 +25,15 @@ function renderHTML() {
   <p>
   ${name} ${dueDate} ${time}
   <button onclick="
-    todoList.splice(${i} , 1);
+    todoList.splice(${index} , 1);
     renderHTML()
   ">Delete</button>
   </p>`
   todoListHTML += html
-}
+  })
+//   for (let i = 0; i < todoList.length; i++) {
+
+// }
   document.querySelector('.js-todo-html')
   .innerHTML = todoListHTML;
   console.log(todoListHTML);
