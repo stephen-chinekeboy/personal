@@ -19,7 +19,9 @@ function renderHTML() {
     
   const html = `
   <p>
-  ${name} ${dueDate} ${time}
+  <div>${name}</div>
+  <div>${dueDate}</div>
+  <div>${time}</div>
   <button onclick="
     todoList.splice(${index} , 1);
     renderHTML()
@@ -27,9 +29,6 @@ function renderHTML() {
   </p>`
   todoListHTML += html
   })
-//   for (let i = 0; i < todoList.length; i++) {
-
-// }
   document.querySelector('.js-todo-html')
   .innerHTML = todoListHTML;
   console.log(todoListHTML);
