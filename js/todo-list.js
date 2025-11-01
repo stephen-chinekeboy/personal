@@ -1,14 +1,14 @@
 const todoList = 
 [{name:'Pray',
-  dueDate: '2025-10-29',
+  dueDate: '29-10-2025',
   time: '12:00AM'}
   ,{
   name: 'Sturdy The Word',
-  dueDate: '2025-10-29',
+  dueDate: '29-10-2025',
   time: '12:00AM',
 },{
   name: 'Fast',
-  dueDate: '2025-10-29',
+  dueDate: '29-10-2025',
   time: '12:00AM',
 }];
 renderHTML()
@@ -18,15 +18,13 @@ function renderHTML() {
   const {name , dueDate , time} = totalObject
     
   const html = `
-  <p>
   <div>${name}</div>
   <div>${dueDate}</div>
   <div>${time}</div>
   <button onclick="
     todoList.splice(${index} , 1);
     renderHTML()
-  ">Delete</button>
-  </p>`
+  "class="delete-todo-button">Delete</button>`
   todoListHTML += html
   })
   document.querySelector('.js-todo-html')
@@ -38,7 +36,7 @@ function renderHTML() {
 
 
 function addTodo() {
-  const inputElement = document.querySelector('.js-todo-add');
+  const inputElement = document.querySelector('.js-todo-name');
   const name = inputElement.value;
 
   const dateInputElement = document.querySelector('.js-todo-date');
